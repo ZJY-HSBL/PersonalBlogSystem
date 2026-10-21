@@ -1,0 +1,22 @@
+# Maven / editors
+/target/
+.idea/
+*.iml
+*.class
+.classpath
+.project
+.settings/
+.DS_Store
+# Secrets and runtime
+application-noteblogv4.properties
+*.log
+logs/
+noteblog/
+*.jks
+*.p12
+.env
+.env.*
+!.env.example
+# User uploaded content
+uploads/
+data/
