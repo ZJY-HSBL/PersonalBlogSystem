@@ -2,31 +2,53 @@
 
 这是我在大一下学期，刚学完 Java 相关技术栈之后，为了练习 Java Web 开发而完成的一个个人博客系统项目。2026 年 10 月 21 日，我从电脑磁盘深处重新翻出了这个已经放了很久的项目。然后脑子一抽把它整理出来上传到 GitHub，就当是给自己的学习经历留一份存档。我将这次上传作为仓库的第一个版本 `v1.0.0`。后续还会继续升级换代，逐步完善代码、界面、功能、文档以及运行和测试流程。
 
+## 页面展示
+
+以下两张图是基于项目原有前端 HTML 模板与样式资源生成的**静态页面预览**，用于展示历史版本的大致界面结构。它们不是启动 Spring Boot 服务、连接数据库后采集的实际运行截图；后续完成环境恢复后，会更新为真实的功能截图。
+
+### 博客首页（静态预览）
+
+![博客首页静态预览](docs/screenshots/frontend-preview.png)
+
+### 管理后台（静态预览）
+
+![管理后台静态预览](docs/screenshots/admin-preview.png)
+
 ## 技术栈
 
-- Java 8、Spring Boot 2.0.3
-- Spring Data JPA、MyBatis、MySQL
-- Thymeleaf、HTML、CSS、JavaScript、Layui
-- Maven
+| 层次 | 技术 |
+| --- | --- |
+| 后端 | Java 8 / Spring Boot 2.0.3 |
+| 模板及前端 | Thymeleaf、HTML、CSS、JavaScript、Layui |
+| 数据库及数据访问 | MySQL、Spring Data JPA、MyBatis |
+| 构建工具 | Maven |
 
 ## 功能
 
-文章与笔记、分类与标签、评论和留言、项目展示、云文件及后台权限管理等。此版本保留了较早时期的工程结构，运行环境与功能完整性尚待重新验证。
+包括文章与笔记管理、分类与标签管理、评论与留言、个人资料、项目展示、云文件及后台角色权限管理等。功能依据历史源码列示，**暂未逐一重新运行验证**。
 
-## 页面截图
+## 配置与运行
 
-待重新搭建运行环境后补充**实际运行截图**。本次整理不使用设计稿冒充实际运行效果。
+历史版本依赖 JDK 8、Maven 和 MySQL。配置数据库等外部服务后再启动，实际启动流程与数据库初始化仍需恢复验证。
+
+1. 将仓库根目录的 `application-noteblogv4.properties.example` 复制为 `application-noteblogv4.properties`。
+2. 配置数据库连接参数、上传目录；不要把密码或密钥提交到仓库。
+3. 使用 Java 8 与 Maven 检查并构建项目：`mvn clean package -DskipTests`。
+4. 启动之前确认数据库和服务端口配置；具体初始化数据可能需按历史代码和环境补齐。
+
+此版本未声称通过全量测试，且不建议直接部署至公网。
 
 ## 版本记录
 
-### v1.0.0 · 2026-10-21
+### v1.0.0 — 2026-10-21
 
-首次整理公开，作为个人博客系统的初始存档。后续会持续升级，并使用 GitHub Releases 记录版本更新。
+- 将历史项目整理为第一版存档。
+- 保留 Java Web 源码、页面模板与静态资源。
+- 清理本地日志、IDE 文件、编译产物及历史敏感配置。
+- 补充 README、配置示例与页面静态预览。
 
-## 代码来源与开源说明
+后续使用 GitHub Releases 记录各版本更新，逐步完善工程规范、运行环境、UI 和测试。
 
-本项目基于 [miyakowork/noteblogv4](https://github.com/miyakowork/noteblogv4) 学习和修改，不应视为完全从零独立开发的作品。上游项目采用 [Apache License 2.0](https://github.com/miyakowork/noteblogv4/blob/master/LICENSE)，公开发布时保留原项目的版权与许可声明。原项目开发者及贡献者保有其原始代码的版权。
+## 代码来源与许可证
 
-## 注意事项
-
-旧版依赖与数据库配置需按运行环境调整。不要提交真实数据库密码、云服务密钥、历史日志或本地隐私文件。
+本项目基于 [NoteBlogV4](https://github.com/miyakowork/noteblogv4) 进行学习、修改和练习，而非完全从零开发；对上游开源作者表示感谢。原项目采用 Apache License 2.0，本仓库保留了上游来源及许可证信息。第三方前端库的原始许可证和版权信息亦应继续保留。

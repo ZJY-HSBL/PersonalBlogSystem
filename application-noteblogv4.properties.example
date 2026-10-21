@@ -1,0 +1,12 @@
+# Copy this example to application-noteblogv4.properties locally. Never commit real credentials.
+server.http.port=8089
+# Database server
+db.ip=127.0.0.1
+db.port=3306
+db.name=noteblogv4
+db.username=${DB_USERNAME:root}
+db.password=${DB_PASSWORD:}
+# Set this to an absolute, writable file:/ path appropriate for your computer.
+noteblog.upload.path=file:/tmp/noteblogv4/uploads/
+noteblog.develop=true
+noteblog.menu.auth=false
