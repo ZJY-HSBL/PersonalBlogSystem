@@ -23,6 +23,10 @@ jobs:
           git clone --quiet --depth 1 --branch master https://github.com/miyakowork/noteblogv4.git /tmp/noteblogv4-upstream
           upstream_head="$(git -C /tmp/noteblogv4-upstream rev-parse HEAD)"
           test "$upstream_head" = "319b557c0e82a917bdfff4f7b3f52891c41f9f92"
+          # Start from latest main, not the commit that originally triggered this run.
+          git fetch origin main
+          git checkout main
+          git reset --hard origin/main
           mkdir -p src/main/resources/static/plugins src/main/resources/static/assets/img
           cp -a /tmp/noteblogv4-upstream/src/main/resources/static/plugins/. src/main/resources/static/plugins/
           cp -a /tmp/noteblogv4-upstream/src/main/resources/static/assets/img/. src/main/resources/static/assets/img/
