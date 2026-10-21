@@ -2,8 +2,7 @@ name: Publish historical v1.0.0
 
 on:
   push:
-    paths:
-      - '.github/workflows/publish-initial-release.yml'
+    branches: [main]
   workflow_dispatch:
 
 permissions:
