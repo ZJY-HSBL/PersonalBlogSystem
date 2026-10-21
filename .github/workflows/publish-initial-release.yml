@@ -1,0 +1,46 @@
+name: Publish historical v1.0.0
+
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-initial-release.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  restore-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PersonalBlogSystem
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Restore third-party frontend assets from pinned upstream
+        run: |
+          set -euo pipefail
+          git clone --quiet --depth 1 --branch master https://github.com/miyakowork/noteblogv4.git /tmp/noteblogv4-upstream
+          upstream_head="$(git -C /tmp/noteblogv4-upstream rev-parse HEAD)"
+          test "$upstream_head" = "319b557c0e82a917bdfff4f7b3f52891c41f9f92"
+          mkdir -p src/main/resources/static/plugins src/main/resources/static/assets/img
+          cp -a /tmp/noteblogv4-upstream/src/main/resources/static/plugins/. src/main/resources/static/plugins/
+          cp -a /tmp/noteblogv4-upstream/src/main/resources/static/assets/img/. src/main/resources/static/assets/img/
+          git add src/main/resources/static/plugins src/main/resources/static/assets/img
+          if ! git diff --cached --quiet; then
+            git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "chore: restore historical third-party static resources"
+            git push origin HEAD:main
+          fi
+
+      - name: Publish source-only first release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view v1.0.0 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "v1.0.0 already exists; not replacing it."
+            exit 0
+          fi
+          current_sha="$(git rev-parse HEAD)"
+          gh release create v1.0.0 --repo "$GITHUB_REPOSITORY" --target "$current_sha" --title "PersonalBlogSystem v1.0.0 — Initial Archive" --notes "Initial archive of my freshman-year Java Web personal blog project, recovered on October 21, 2026. This historical source snapshot is not yet fully runtime-tested. The README contains clearly labeled static page previews. Based on NoteBlogV4 (Apache License 2.0)."
