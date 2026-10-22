@@ -1,54 +1,27 @@
-# 个人博客系统
+# 个人博客系统 / Personal Blog System
 
-这是我在大一下学期，刚学完 Java 相关技术栈之后，为了练习 Java Web 开发而完成的一个个人博客系统项目。2026 年 10 月 21 日，我从电脑磁盘深处重新翻出了这个已经放了很久的项目。然后脑子一抽把它整理出来上传到 GitHub，就当是给自己的学习经历留一份存档。我将这次上传作为仓库的第一个版本 `v1.0.0`。后续还会继续升级换代，逐步完善代码、界面、功能、文档以及运行和测试流程。
+## 中文
 
-## 页面展示
+这是我在大一下学期，刚学完 Java 相关技术栈之后，为了练习 Java Web 开发而完成的一个个人博客系统项目。2026 年 10 月 21 日，我从电脑磁盘深处重新翻出了这个已经放了很久的项目。 然后脑子一抽把它整理出来上传到 GitHub，就当是给自己的学习经历留一份存档。我将这次上传作为仓库的第一个版本 `v1.0.0`。后续还会继续升级换代，逐步完善代码、界面、功能、文档以及运行和测试流程。
 
-以下两张图是基于项目原有前端 HTML 模板与样式资源生成的**静态页面预览**，用于展示历史版本的大致界面结构。它们不是启动 Spring Boot 服务、连接数据库后采集的实际运行截图；后续完成环境恢复后，会更新为真实的功能截图。
+## English
 
-### 博客首页（静态预览）
+I built this personal blog system during the second semester of my freshman year, shortly after learning Java and related technologies, as a way to practice Java Web development. On October 21, 2026, I dug it out from the depths of my computer's storage after leaving it untouched for a long time. On a whim, I tidied it up and uploaded it to GitHub as a record of my learning journey. This is the repository's first version, `v1.0.0`. I'll keep updating it and gradually improve the code, interface, features, documentation, and build and testing processes.
 
-![博客首页静态预览](docs/screenshots/frontend-preview.png)
+## 页面预览 / Page Previews
 
-### 管理后台（静态预览）
+以下是根据旧版页面模板制作的静态预览，**不是实际运行截图**。  
+The following are static previews based on the original page templates, **not screenshots of the running application**.
 
-![管理后台静态预览](docs/screenshots/admin-preview.png)
+**博客首页 / Blog Homepage**
 
-## 技术栈
+![博客首页 / Blog Homepage](docs/screenshots/frontend-preview.png)
 
-| 层次 | 技术 |
-| --- | --- |
-| 后端 | Java 8 / Spring Boot 2.0.3 |
-| 模板及前端 | Thymeleaf、HTML、CSS、JavaScript、Layui |
-| 数据库及数据访问 | MySQL、Spring Data JPA、MyBatis |
-| 构建工具 | Maven |
+**管理后台 / Admin Panel**
 
-## 功能
+![管理后台 / Admin Panel](docs/screenshots/admin-preview.png)
 
-包括文章与笔记管理、分类与标签管理、评论与留言、个人资料、项目展示、云文件及后台角色权限管理等。功能依据历史源码列示，**暂未逐一重新运行验证**。
+---
 
-## 配置与运行
-
-历史版本依赖 JDK 8、Maven 和 MySQL。配置数据库等外部服务后再启动，实际启动流程与数据库初始化仍需恢复验证。
-
-1. 将仓库根目录的 `application-noteblogv4.properties.example` 复制为 `application-noteblogv4.properties`。
-2. 配置数据库连接参数、上传目录；不要把密码或密钥提交到仓库。
-3. 使用 Java 8 与 Maven 检查并构建项目：`mvn clean package -DskipTests`。
-4. 启动之前确认数据库和服务端口配置；具体初始化数据可能需按历史代码和环境补齐。
-
-此版本未声称通过全量测试，且不建议直接部署至公网。
-
-## 版本记录
-
-### v1.0.0 — 2026-10-21
-
-- 将历史项目整理为第一版存档。
-- 保留 Java Web 源码、页面模板与静态资源。
-- 清理本地日志、IDE 文件、编译产物及历史敏感配置。
-- 补充 README、配置示例与页面静态预览。
-
-后续使用 GitHub Releases 记录各版本更新，逐步完善工程规范、运行环境、UI 和测试。
-
-## 代码来源与许可证
-
-本项目基于 [NoteBlogV4](https://github.com/miyakowork/noteblogv4) 进行学习、修改和练习，而非完全从零开发；对上游开源作者表示感谢。原项目采用 Apache License 2.0，本仓库保留了上游来源及许可证信息。第三方前端库的原始许可证和版权信息亦应继续保留。
+基于 [NoteBlogV4](https://github.com/miyakowork/noteblogv4) 学习与修改，遵循其 Apache License 2.0。  
+Based on [NoteBlogV4](https://github.com/miyakowork/noteblogv4), with modifications for learning purposes. Original code licensed under Apache License 2.0; see [LICENSE](LICENSE).
