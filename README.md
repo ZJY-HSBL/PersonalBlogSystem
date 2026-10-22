@@ -2,11 +2,11 @@
 
 ## 中文
 
-这是我在大一下学期，刚学完 Java 相关技术栈之后，为了练习 Java Web 开发而完成的一个个人博客系统项目。2026 年 10 月 21 日，我从电脑磁盘深处重新翻出了这个已经放了很久的项目。 然后脑子一抽把它整理出来上传到 GitHub，就当是给自己的学习经历留一份存档。我将这次上传作为仓库的第一个版本 `v1.0.0`。后续还会继续升级换代，逐步完善代码、界面、功能、文档以及运行和测试流程。
+这是我在大一下学期，刚学完 Java 相关技术栈之后，为了练习 Java Web 开发而完成的一个项目。2026 年 10 月 21 日，我从电脑磁盘深处重新翻出了这个已经放了很久的项目。 然后脑子一抽把它整理出来上传到 GitHub，就当是给自己的学习经历存个档。我将这次上传作为仓库的第一个版本 v1.0.0。后续还会继续升级换代。
 
 ## English
 
-I built this personal blog system during the second semester of my freshman year, shortly after learning Java and related technologies, as a way to practice Java Web development. On October 21, 2026, I dug it out from the depths of my computer's storage after leaving it untouched for a long time. On a whim, I tidied it up and uploaded it to GitHub as a record of my learning journey. This is the repository's first version, `v1.0.0`. I'll keep updating it and gradually improve the code, interface, features, documentation, and build and testing processes.
+This is a project I completed in the second semester of my freshman year, shortly after learning Java and related technologies, to practice Java Web development. On October 21, 2026, I dug it out from the depths of my computer after leaving it untouched for a long time. On a whim, I tidied it up and uploaded it to GitHub as a record of my learning journey. I made this upload the repository's first version, v1.0.0. I'll continue to update it in future versions.
 
 ## 页面预览 / Page Previews
 
